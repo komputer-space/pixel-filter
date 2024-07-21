@@ -1,0 +1,94 @@
+@import "./ui.scss";
+@import "./dropzone.scss";
+@import "./sketch-guide.scss";
+@import "./transparency-layer.scss";
+@import "./info-layer.scss";
+
+@font-face {
+  font-family: "Recursive";
+  font-weight: 300 1000;
+  src: url(/fonts/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.woff2)
+    format("woff2-variations");
+}
+
+:root {
+  font-family: "Recursive", monospace;
+  font-variation-settings: "slnt" 0, "CASL" 0, "CRSV" 0.5, "MONO" 1;
+  font-size: 16px;
+  --accent-orange: #ff5414;
+  --accent-blue: #6c52df;
+  --accent-green: #00ff9e;
+  
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+
+  background: black;
+  color: white;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+em,
+i {
+  font-variation-settings: "slnt" -10, "CRSV" 1, "MONO" 1;
+  font-style: normal;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  canvas {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: auto;
+  }
+}
+
+*::selection {
+  background-color: var(--accent-orange);
+  color: black;
+  background-image: none;
+  -webkit-text-fill-color: initial;
+}
+
+#view-mode-indicator {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  mix-blend-mode: exclusion;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 100px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-prototype.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Filter</title>
+  </head>
+  <body>
+    <div id="sketch-guide">
+      <img id="small-screen-note" src="/bigger-screen-note.webp" alt="" />
+    </div>
+    <div id="info-layer">
+      <div class="info">info</div>
+    </div>
+    <div id="transparency-layer">
+      <div class="side-panels">
+        <div id="info-panel">
+          <div class="title">
+            <h1>Toolbox Demo</h1>
+            <img src="/title.webp" alt="" />
+          </div>
+          <div id="credits">
+            <p>
+              a <a href="https://komputer.space">komputer.space</a> tool built
+              with paper.js. Image filters adapted from
+              <a href="https://github.com/zhengsk/ImageFilters.js#readme"
+                >canvas-filters</a
+              >
+              by <em>@zsk526</em>
+            </p>
+            <p>
+              <a
+                id="source-link"
+                href="https://github.com/komputer-space/pixel-filter"
+              >
+                → source code</a
+              >
+            </p>
+          </div>
+        </div>
+        <div id="debug-layer"></div>
+      </div>
+      <div id="focus-info">
+        <p>press <em>space</em> to focus</p>
+      </div>
+    </div>
+    <div class="ui-container ui-bottom">
+      <div class="ui-panel ui-panel-horizontal">
+        <input
+          class="slider"
+          id="parameter-slider"
+          type="range"
+          min="0"
+          max="1"
+          step="0.05"
+          value="50"
+        />
+        <button id="serial-button">serial connect</button>
+      </div>
+    </div>
+    <div id="view-mode-indicator">
+      <div>
+        <img src="/view-frame/frame-01.webp" alt="" />
+        <img src="/view-frame/frame-02.webp" alt="" />
+      </div>
+      <div>
+        <img src="/view-frame/frame-03.webp" alt="" />
+        <img src="/view-frame/frame-04.webp" alt="" />
+      </div>
+    </div>
+    <div class="ui-container ui-bottom"></div>
+    <div id="app">
+      <div id="dropzone">
+        <img id="img" src="" alt="" />
+        <canvas id="canvas"></canvas>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+.ui-container {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 1rem;
+  pointer-events: none;
+
+  &.ui-bottom {
+    justify-content: flex-end;
+  }
+
+  &.ui-top {
+    justify-content: flex-start;
+  }
+}
+
+.ui-panel {
+  display: flex;
+  gap: 1rem;
+
+  &.ui-panel-horizontal {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &.ui-panel-vertical {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  * {
+    pointer-events: auto;
+  }
+}
+
+button {
+  margin: 0;
+  padding: 0.4rem 0.7rem;
+  font-family: "Recursive", monospace;
+  font-size: 0.75rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+
+  &.active {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    background-color: rgba(0, 255, 158, 0.2);
+
+    &:hover {
+      background-color: rgba(0, 255, 158, 0.8);
+      color: black;
+    }
+  }
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 10rem; /* Full-width */
+  height: 1rem; /* Specified height */
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: 1px solid white; /* Remove outline */
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 1rem; /* Set a specific slider handle width */
+  height: 1rem; /* Slider handle height */
+  background: #ff5414; /* Green background */
+  border-radius: 4px;
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 1rem; /* Set a specific slider handle width */
+  height: 1rem; /* Slider handle height */
+  background: #ff5414; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
